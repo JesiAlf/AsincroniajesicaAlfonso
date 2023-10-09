@@ -1,0 +1,6 @@
+.Navbar {
+  background-color: hsl(305, 51%, 48%);
+  color: white;
+  padding: 20px 0;
+  justify-content: flex-end;
+}
