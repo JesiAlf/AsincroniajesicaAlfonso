@@ -5,7 +5,7 @@ const MaterialUI = () => {
     <Box
       sx={{
         padding: "10px",
-        backgroundColor: { md: "hsl(305, 51%, 48%)", xs: "blueviolet" },
+        backgroundColor: { md: "rgb(248, 149, 103)", xs: "rgb(207, 142, 245)" },
       }}
     >
       <Grid

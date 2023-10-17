@@ -1,26 +1,27 @@
-import { NavBar } from "./components/layout/NavBar/NavBar";
-import { Footer } from "./components/Footer/Footer";
-/*import {Home} from './components/home/Home';*/
-import MaterialUI from "./components/materialUI/MaterialUI";
+import {BrowserRouter,Routes,Route}from "react-router-dom";
 import ItemListContainer from "./components/itemListContainer/ItemListContainer";
-import CounterContainer from "./components/common/counter/CounterContainer";
-import { Badge } from "@mui/material";
-//import ItemList from "./components/itemListContainer/ItemList";
+import Cart from "./components/pages/cart/Cart";
+import ItemDetailContainer from "./components/itemListContainer/ItemDetailContainer";
+import { NavBar } from "./components/layout/navBar/NavBar";
+
 
 function App() {
-  //let nombre = "Luna";
 
   return (
     <>
-      <NavBar />
-      <MaterialUI />
-      <ItemListContainer nombre={nombre} x={true} />
-      <CounterContainer stock={10} />
-      <CounterContainer stock={5} />
-      <CounterContainer stock={7} />
-<Badge/>
+    <BrowserRouter>
+    <Routes>
 
-      <Footer />
+    <Route element={<NavBar />}>
+          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/category/:categoryName" element={<ItemListContainer />} />
+
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/itemDetail/:id" element={<ItemDetailContainer/>}/>
+          <Route path="*" element={<h1>Not found</h1>} />
+          </Route>
+    </Routes>
+    </BrowserRouter>
     </>
   );
 }

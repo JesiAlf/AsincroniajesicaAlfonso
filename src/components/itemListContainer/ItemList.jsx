@@ -1,9 +1,8 @@
 import ProductCard from "../common/productCard/ProductCard";
 
 const ItemList=({items})=>{
-//console.log(Items[0]?.title)
     return(
-    <section style={{display:"flex", justifyContent:"space-evenly"}}>
+    <section>
    {
    items.map((item)=>{
     return <ProductCard key={item.id} item={item} />
